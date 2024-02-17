@@ -1,9 +1,14 @@
-import Header from "./components/Header.jsx";
+import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
 import { CORE_CONCEPTS } from "./data.js";
 import jsxImg from "./assets/jsx-ui.png";
+import TabButton from "./components/TabButton.jsx";
 
 function App() {
+  function handleSelect(){
+    console.log("Hi selected to");
+  }
+
   return (
     <>
       <Header />
@@ -28,6 +33,16 @@ function App() {
               img={CORE_CONCEPTS[3].img}
             />
           </ul>
+        </section>
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TabButton onSelect={handleSelect}>Components</TabButton>
+            <TabButton onSelect={handleSelect}>JSX</TabButton>
+            <TabButton onSelect={handleSelect}>Props</TabButton>
+            <TabButton onSelect={handleSelect}>State</TabButton>
+          </menu>
+
         </section>
       </main>
     </>
