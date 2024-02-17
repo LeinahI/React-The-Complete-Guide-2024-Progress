@@ -1,4 +1,4 @@
-function CoreConcept({img, title, desc}) {
+export default function CoreConcept({img, title, desc}) {
   return (
     <li>
         <img src={img} alt={title} />
@@ -6,6 +6,4 @@ function CoreConcept({img, title, desc}) {
         <p>{desc}</p>
     </li>
   );
-}
-
-export default CoreConcept;
+};

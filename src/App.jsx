@@ -1,5 +1,5 @@
-import Header from "./Header";
-import CoreConcept from "./CoreConcept";
+import Header from "./components/Header.jsx";
+import CoreConcept from "./components/CoreConcept.jsx";
 import { CORE_CONCEPTS } from "./data.js";
 import jsxImg from "./assets/jsx-ui.png";
 
