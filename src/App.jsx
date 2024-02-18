@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
 import { CORE_CONCEPTS } from "./data.js";
@@ -5,10 +7,14 @@ import jsxImg from "./assets/jsx-ui.png";
 import TabButton from "./components/TabButton.jsx";
 
 function App() {
-  function handleSelect(){
-    console.log("Hi selected to");
+  let [ selectedTopic, setSelectedTopic ] = useState('click mo to');
+
+  function handleSelect(selectedButton) {
+    setSelectedTopic(selectedButton)
+    console.log(selectedTopic);
   }
 
+  console.log('App component executing');
   return (
     <>
       <Header />
@@ -37,12 +43,14 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={handleSelect}>Components</TabButton>
-            <TabButton onSelect={handleSelect}>JSX</TabButton>
-            <TabButton onSelect={handleSelect}>Props</TabButton>
-            <TabButton onSelect={handleSelect}>State</TabButton>
+            <TabButton onSelect={() => handleSelect("components")}>
+              Components
+            </TabButton>
+            <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
-
+          {selectedTopic}
         </section>
       </main>
     </>
