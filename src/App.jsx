@@ -7,7 +7,7 @@ import jsxImg from "./assets/jsx-ui.png";
 import TabButton from "./components/TabButton.jsx";
 
 function App() {
-  let [selectedTopic, setSelectedTopic] = useState("components");
+  let [selectedTopic, setSelectedTopic] = useState();
 
   function handleSelect(selectedButton) {
     setSelectedTopic(selectedButton);
@@ -49,14 +49,21 @@ function App() {
             <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
+
+          {!selectedTopic ? (
+            <div id="tab-content">
+              <h3>Select a topic</h3>
+            </div>
+          ) : (
+            <div id="tab-content">
+              <h3>{EXAMPLES[selectedTopic].title}</h3>
+              <p>{EXAMPLES[selectedTopic].description}</p>
+              <pre>
+                <code>{EXAMPLES[selectedTopic].code}</code>
+              </pre>
+            </div>
+          )}
           
-          <div id="tab-content">
-            <h3>{EXAMPLES[selectedTopic].title}</h3>
-            <p>{EXAMPLES[selectedTopic].description}</p>
-            <pre>
-              <code>{EXAMPLES[selectedTopic].code}</code>
-            </pre>
-          </div>
         </section>
       </main>
     </>
