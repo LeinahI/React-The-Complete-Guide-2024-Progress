@@ -1,21 +1,23 @@
-
-import Header from "./components/Header/Header.jsx";
-import CoreConcepts from "./components/CoreConcepts.jsx";
-import Examples from "./components/Examples.jsx";
-
-
 function App() {
-  
-
-  console.log("App component executing");
   return (
-    <>
-      <Header />
-      <main>
-        <CoreConcepts />
-        <Examples />
-      </main>
-    </>
+    <main>
+      <div id="game-container">
+        <ol id="players">
+          {/* Player 1 */}
+          <li>
+            <span className="player-name">Player 1</span>
+            <span className="player-symbol">X</span>
+          </li>
+          {/* Player 2 */}
+          <li>
+            <span className="player-name">Player 2</span>
+            <span className="player-symbol">O</span>
+          </li>
+        </ol>
+        GAME BOARD
+      </div>
+      LOG
+    </main>
   );
 }
 
