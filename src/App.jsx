@@ -18,7 +18,7 @@ const INIT_GAME_BOARD = [
   [null, null, null],
 ];
 
-function deriveActivePlayer(gameTurns) { 
+function deriveActivePlayer(gameTurns) {
   let currentPlayer = "X";
 
   if (gameTurns.length > 0 && gameTurns[0].player === "X") {
@@ -79,7 +79,7 @@ function deriveWinner(gameBoard, players) {
 }
 
 function App() {
-  const [players,   setPlayers] = useState(PLAYERS); // Initialize state variable players using the useState hook, setting its initial value to the PLAYERS object
+  const [players, setPlayers] = useState(PLAYERS); // Initialize state variable players using the useState hook, setting its initial value to the PLAYERS object
   const [gameTurns, setGameTurns] = useState([]);
   const activePlayer = deriveActivePlayer(gameTurns);
   const gameBoard = deriveGameBoard(gameTurns); // Create a game board based on the game turns
@@ -141,9 +141,11 @@ function App() {
         {(winner || hasDraw) && (
           <GameOver onRematch={handleRematch} winner={winner} />
         )}
+        <div className="parent-container">
         <GameBoard onSelectSquare={handleSelectSquare} board={gameBoard} />
+        <Log turns={gameTurns} />
+        </div>
       </div>
-      <Log turns={gameTurns} />
     </main>
   );
 }
