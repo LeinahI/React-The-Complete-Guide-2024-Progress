@@ -48,15 +48,15 @@ button:focus {
   
 } */
 
-.label.invalid {
-  color: #f87171;
-}
+/* .label.invalid {
+  
+} */
 
-input.invalid {
+/* input.invalid {
   color: #ef4444;
   border-color: #f73f3f;
   background-color: #fed2d2;
-}
+} */
 
 .actions {
   display: flex;
@@ -64,20 +64,13 @@ input.invalid {
   gap: 1rem;
 }
 
-.button {
-  padding: 1rem 2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  border-radius: 0.25rem;
-  color: #1f2937;
-  background-color: #f0b322;
-  border-radius: 6px;
-  border: none;
-}
+/* .button {
+  
+} */
 
-.button:hover {
-  background-color: #f0920e;
-}
+/* .button:hover {
+  
+} */
 
 .text-button {
   color: #f0b322;
